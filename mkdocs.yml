@@ -68,7 +68,7 @@ theme:
     code: Roboto Mono
   icon:  # from .icons path. Add to theme override for custom logo.
     logo: python-logo  # top left header logo
-  favicon: assets/logo-up42.ico #browser tab logo
+  favicon: assets/btclogo.ico #browser tab logo
 
 ## Plugins
 plugins:
