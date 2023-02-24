@@ -16,4 +16,4 @@
 
 BTC Address: bc1qt7tz0wcpqtmdk4jvd8l67fde3du97l5xwpsmdt
 
-![Screenshot](/assets/btc_address.png){align=center ; style="height:250px;width:250px"}
+![Screenshot](/assets/btc_address.PNG){align=center ; style="height:250px;width:250px"}
