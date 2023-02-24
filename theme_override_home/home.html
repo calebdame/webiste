@@ -1,0 +1,284 @@
+<!-- Custom HTML site displayed as the Home chapter -->
+
+{% extends "main.html" %}
+{% block tabs %}
+{{ super() }}
+<style>
+
+    .md-main {
+        flex-grow: 0
+    }
+
+    .md-main__inner {
+        display: flex;
+        height: 100%;
+    }
+
+    .tx-container {
+        padding-top: .0rem;
+        background: linear-gradient(to bottom, var(--md-primary-fg-color), hsla(160deg,47%,55%,1) 99%,#fff 99%)
+    }
+
+    .tx-hero {
+        margin: 32px 2.8rem;
+        color: var(--md-primary-bg-color);
+        justify-content: center;
+    }
+
+    .tx-hero h1 {
+        margin-bottom: 1rem;
+        color: currentColor;
+        font-weight: 700
+    }
+
+    .tx-hero__content {
+        padding-bottom: 1rem;
+        margin: 0 auto;
+    }
+
+    .tx-hero__image{
+        width:17rem;
+        height:17rem;
+        order:1;
+        padding-right: 2.5rem;
+    }
+
+    .tx-hero .md-button {
+        margin-top: .5rem;
+        margin-right: .5rem;
+        color: var(--md-primary-bg-color)
+    }
+
+    .tx-hero .md-button--primary {
+        background-color: var(--md-primary-bg-color);
+        color: hsla(280deg, 37%, 48%, 1);
+        border-color: var(--md-primary-bg-color)
+    }
+
+    .tx-hero .md-button:focus,
+    .tx-hero .md-button:hover {
+        background-color: var(--md-accent-fg-color);
+        color: var(--md-default-bg-color);
+        border-color: var(--md-accent-fg-color)
+    }
+
+    .feature-item h2 svg {
+        height: 30px;
+        float: left;
+        margin-right: 10px;
+        transform: translateY(10%);
+    }
+
+    .top-hr {
+        margin-top: 42px;
+    }
+
+    .feature-item {
+        font-family: 'Lato', sans-serif;
+        font-weight: 300;
+        box-sizing: border-box;
+        padding: 0 15px;
+        word-break: break-word
+    }
+
+    .feature-item h2 {
+        color: #333;
+        font-weight: 300;
+        font-size: 25px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: normal;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-family: inherit;
+    }
+
+    .feature-item p {
+        font-size: 16px;
+        line-height: 1.8em;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        color: #111;
+        margin: 0 0 10px;
+        display: block;
+    }
+
+    @media screen and (max-width:30em) {
+        .tx-hero h1 {
+            font-size: 1.4rem
+        }
+    }
+
+    @media screen and (min-width:60em) {
+        .md-sidebar--secondary {
+            display: none
+        }
+
+        .tx-hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tx-hero__content {
+            max-width: 22rem;
+            margin-top: 3.5rem;
+            margin-bottom: 3.5rem;
+            margin-left: 1.0rem;
+            margin-right: 4.0rem;
+            align-items: center;
+        }
+    }
+
+    @media screen and (min-width:76.25em) {
+        .md-sidebar--primary {
+            display: none
+        }
+
+        .top-hr {
+            width: 100%;
+            display: flex;
+            max-width: 61rem;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 0 .2rem;
+        }
+
+        .bottom-hr {
+            margin-top: 10px;
+            width: 100%;
+            display: flex;
+            max-width: 61rem;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 0 .2rem;
+        }
+
+        .feature-item {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .feature-item:hover {
+            background-color: #526cfe47;
+            border-radius: 3px;
+        }
+    }
+
+    .hr {
+        border-bottom: 1px solid #eee;
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .text-center {
+        text-align: center;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 15px;
+        font-family: 'Lato', sans-serif;
+        font-size: 23px;
+        font-weight: 300;
+        padding-bottom: 10px;
+    }
+
+    .logos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: row wrap;
+        margin: 0 auto;
+    }
+
+    .logos img {
+        flex: 1 1 auto;
+        padding: 25px;
+        max-height: 130px;
+        vertical-align: middle;
+    }
+
+    .hr-logos {
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+
+    .md-footer-meta__inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 1.0rem;
+    }
+
+    .md-footer-social {
+        padding-top: 20px;
+    }
+</style>
+
+<!-- Main site Entry button descriptions -->
+<section class="tx-container">
+    <div class="md-grid md-typeset">
+      <div class="tx-hero">
+        <div class="tx-hero__image">
+          <img src="assets/me.jpg" draggable="false">
+        </div>
+        <div class="tx-hero__content">
+          <h1> Caleb Tucker Dame </h1>
+          <p>Just a <b>Husband</b>, <b>Data Scientist</b>, and a <b>Bitcoin</b> Enthusiast</p>
+          <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | striptags }}" class="md-button md-button--primary">
+            Projects
+          </a>
+          <a href="{{ config.repo_url }}" title="{{ lang.t('source.link.title') }}" class="md-button">
+            My GitHub
+          </a>
+          <a href="/assets/CalebDameCV11.29.21.pdf" title="{{ page.next_page.title | striptags }}" class="md-button md-button--primary">
+            Resume (PDF)
+          </a>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- Main site box descriptions -->
+<div class="top-hr">
+    
+    <div class="feature-item">
+        <h2>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                    d="M16 17v2H2v-2s0-4 7-4 7 4 7 4m-3.5-9.5A3.5 3.5 0 109 11a3.5 3.5 0 003.5-3.5m3.44 5.5A5.32 5.32 0 0118 17v2h4v-2s0-3.63-6.06-4M15 4a3.39 3.39 0 00-1.93.59 5 5 0 010 5.82A3.39 3.39 0 0015 11a3.5 3.5 0 000-7z" />
+            </svg>Connect
+        </h2>
+        <p>Connect with me on <a href="https://www.linkedin.com/in/caleb-dame/"><u><b>Linkedin</b></u></a>! Open to chat about projects, experience, and receive advice</p>
+    </div>
+    <div class="feature-item">
+        <h2>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 425 425"> 
+                <path d="M186.476 46.738 C 179.950 47.762,193.015 42.968,43.867 99.068 C -5.841 117.766,-6.172 118.640,31.056 132.944 C 41.112 136.809,77.646 150.887,112.241 164.230 C 205.676 200.266,190.922 199.587,258.757 170.974 C 280.716 161.711,315.292 147.138,335.593 138.589 L 372.505 123.045 372.712 170.939 L 372.920 218.832 368.255 234.463 C 365.689 243.060,363.768 250.271,363.985 250.488 C 364.202 250.706,370.311 250.790,377.560 250.677 L 390.740 250.471 385.981 235.028 L 381.222 219.586 381.195 169.224 L 381.168 118.862 383.051 116.623 C 386.266 112.803,384.749 109.202,378.716 106.330 C 374.696 104.416,219.735 49.295,214.009 47.742 C 208.907 46.358,192.667 45.766,186.476 46.738 M71.718 201.695 C 72.111 232.178,76.190 242.463,90.853 249.943 C 97.365 253.265,175.647 287.006,179.759 288.263 C 185.908 290.142,203.446 290.174,209.511 288.316 C 213.101 287.216,281.332 258.103,297.028 250.973 C 313.937 243.293,318.417 232.250,318.321 198.493 L 318.267 179.661 299.771 179.460 L 281.275 179.259 250.807 192.133 C 197.824 214.522,197.326 214.525,140.694 192.792 L 105.494 179.284 88.462 179.284 L 71.429 179.284 71.718 201.695 " stroke="none" fill="black" fill-rule="evenodd"/>
+            </svg>
+            Education
+        </h2>
+        <p>B.A. : Applied Mathematics / Economics @ BYU<br>M.S. : Artificial Intelligence @ Johns Hopkins (In Prog.)</p>
+    </div>
+    <div class="feature-item">
+        <h2>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54">
+                <path  d="M0 24C0 37.2548 10.7452 48 24 48C37.2548 48 48 37.2548 48 24C48 10.7452 37.2548 0 24 0C10.7452 0 0 10.7452 0 24ZM28.7865 14.304C32.0601 15.4316 34.4542 17.122 33.9838 20.2663C33.6433 22.5681 32.3673 23.6825 30.6732 24.0731C32.9994 25.2842 34.1831 27.1414 33.0555 30.3611C31.6561 34.3599 28.3316 34.6974 23.9104 33.8607L22.8374 38.1607L20.2447 37.5146L21.3036 33.2721C20.6316 33.1052 19.9449 32.928 19.2374 32.736L18.1748 36.9984L15.585 36.3522L16.658 32.0441C16.4159 31.9821 16.1723 31.9185 15.927 31.8546C15.5586 31.7585 15.1864 31.6614 14.8096 31.567L11.4356 30.7259L12.7227 27.758C12.7227 27.758 14.6331 28.2661 14.6073 28.2284C15.3413 28.4101 15.667 27.9316 15.7954 27.6126L17.491 20.815C17.5546 20.8303 17.6169 20.8459 17.677 20.861C17.7069 20.8685 17.7362 20.8758 17.7649 20.883C17.6615 20.8416 17.5678 20.815 17.4954 20.7966L18.705 15.9441C18.7367 15.3932 18.547 14.6983 17.4969 14.4362C17.5375 14.4089 15.6138 13.968 15.6138 13.968L16.3035 11.1988L19.8791 12.0916L19.8762 12.1049C20.4138 12.2385 20.9676 12.3655 21.5318 12.494L22.5945 8.23606L25.1857 8.88221L24.1445 13.0567C24.8401 13.2155 25.5402 13.3758 26.2218 13.5456L27.2556 9.3984L29.8484 10.0446L28.7865 14.304Z" fill="black"></path>
+            </svg>
+            Interests/Hobbies
+        </h2>
+        <p>Data Science Projects involving Bitcoin fee forecasting and Lighting Network optimization</p>
+    </div>
+</div>
+
+<div class="top-hr">
+    <div class="hr">
+    </div>
+</div>
+
+
+{% endblock %}
+{% block content %}{% endblock %}
+{% block footer %}{% endblock %}
