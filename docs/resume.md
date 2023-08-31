@@ -2,7 +2,7 @@
 
 ### Resume
 
-* Check out my resume [here](/assets/CalebDameCV11.29.21.pdf) [*Last updated Nov. 2021*]
+* Check out my resume [here](/assets/CalebDameCV8.31.23.pdf) [*Last updated Aug. 2023*]
 
 ### Find my Code
 
@@ -10,7 +10,7 @@
 
 ### Contact Me
 
-* Shoot me a DM on [Linkedin](https:/www.linkedin.com/in/caleb-dame) or email me at calebdame@gmail.com
+* Shoot me a DM on [Linkedin](https://www.linkedin.com/in/caleb-dame) or email me at calebdame@gmail.com
 
 ### Tips Welcome
 
